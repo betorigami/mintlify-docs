@@ -1,0 +1,88 @@
+---
+title: "Wheel"
+description: "Spin a wheel with configurable segments and risk levels. Up to 49.5x on high risk."
+---
+
+import { GamePreview } from "/snippets/game-preview.jsx"
+
+A spinning wheel divided into colored segments. More segments and higher risk raise the top multiplier at the cost of more zero-value slots.
+
+<GamePreview title="Wheel" src="https://games.betorigami.com/?settings=eyJlbnZpcm9ubWVudCI6IkhVQjg4X0VVX1BST0QiLCJnYW1lIjoiV0hFRUwifQ==" />
+
+## At a glance
+
+<Columns cols={3}>
+  <Card title="Type">Original, spinning wheel</Card>
+  <Card title="RTP">92–99%</Card>
+  <Card title="Max multiplier">49.5x (high risk, 50 segments, 99% RTP)</Card>
+  <Card title="Segments">10, 20, 30, 40, 50</Card>
+  <Card title="Risk levels">Low, Medium, High</Card>
+  <Card title="Edge">1%, 2%, 3%, 4%, 8%</Card>
+</Columns>
+
+## Paytable
+
+Each segment maps to a multiplier tier (A–E) or a zero. ZERO segments pay 0x.
+
+<Tabs>
+  <Tab title="Low risk">
+    | Segment | Multiplier |
+    |:--|:--|
+    | A (green) | 1.2x |
+    | B (yellow) | 1.5x |
+    | ZERO (black) | 0x |
+
+    Repeating layout per 10 segments: `B, A, A, A, ZERO, A, A, A, A, ZERO`.
+
+    | Segments | ZEROs | A | B | Win chance |
+    |:--|:--|:--|:--|:--|
+    | 10 | 2 | 7 | 1 | 80% |
+    | 20 | 4 | 14 | 2 | 80% |
+    | 30 | 6 | 21 | 3 | 80% |
+    | 40 | 8 | 28 | 4 | 80% |
+    | 50 | 10 | 35 | 5 | 80% |
+  </Tab>
+  <Tab title="Medium risk">
+    | Segment | 10 seg | 20 seg | 30 seg | 40 seg | 50 seg |
+    |:--|:--|:--|:--|:--|:--|
+    | A (green) | 1.5x | 1.5x | 1.5x | 1.5x | 1.5x |
+    | B (yellow) | 1.9x | 1.8x | 1.7x | 1.6x | 2x |
+    | C (blue) | 2x | 2x | 2x | 2x | 3x |
+    | D (red) | 3x | 3x | 3x | 3x | 5x |
+    | E (purple) | — | — | 4x | — | — |
+    | ZERO (black) | 0x | 0x | 0x | 0x | 0x |
+
+    | Segments | ZEROs | A | B | C | D | E |
+    |:--|:--|:--|:--|:--|:--|:--|
+    | 10 | 5 | 2 | 1 | 1 | 1 | — |
+    | 20 | 10 | 2 | 1 | 6 | 1 | — |
+    | 30 | 15 | 6 | 1 | 6 | 1 | 1 |
+    | 40 | 20 | 8 | 1 | 7 | 4 | — |
+    | 50 | 25 | 13 | 8 | 3 | 1 | — |
+  </Tab>
+  <Tab title="High risk">
+    High risk has exactly one winning segment. Every other segment is ZERO.
+
+    | Segments | Multiplier | Win chance |
+    |:--|:--|:--|
+    | 10 | 9.9x | 10% |
+    | 20 | 19.8x | 5% |
+    | 30 | 29.7x | 3.3% |
+    | 40 | 39.6x | 2.5% |
+    | 50 | 49.5x | 2% |
+
+    Formula: `multiplier = segments × (1 - edge)`. At 99% RTP, `segments × 0.99`.
+  </Tab>
+</Tabs>
+
+## Configuration
+
+Wheel-specific artwork:
+
+| Attribute | Description |
+|:--|:--|
+| `customWheelBackgroundSvgUrl` | Background artwork |
+| `customWheelCenterSvgUrl` | Wheel-center artwork |
+| `customWheelCenterPadding` | Padding around the center image |
+
+For shared attributes (edge, limits, branding), see [game settings](/operate/game-settings).

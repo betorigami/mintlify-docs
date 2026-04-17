@@ -1,0 +1,59 @@
+---
+title: "Limbo"
+description: "Set a target multiplier and bet whether the result clears it. Up to 1,000,000x."
+---
+
+import { GamePreview } from "/snippets/game-preview.jsx"
+
+Pick a target multiplier. The server generates a random multiplier. If it meets or exceeds your target, you win your target. The higher you aim, the longer the odds and the bigger the payout. Up to 1,000,000x.
+
+<GamePreview title="Limbo" src="https://games.betorigami.com/?settings=eyJlbnZpcm9ubWVudCI6IkhVQjg4X0VVX1BST0QiLCJnYW1lIjoiTElNQk8ifQ==" />
+
+## At a glance
+
+<Columns cols={3}>
+  <Card title="Type">Original, target multiplier</Card>
+  <Card title="RTP">92–99%</Card>
+  <Card title="Max multiplier">1,000,000x</Card>
+  <Card title="Min multiplier">1.01x</Card>
+  <Card title="Multiplier precision">2 decimals</Card>
+  <Card title="Win-chance precision">8 decimals</Card>
+</Columns>
+
+## Win-chance formula
+
+```text
+win_chance = (100 - edge) / target_multiplier
+```
+
+### Example targets at 99% RTP
+
+| Target | Win chance | Implied odds |
+|:--|:--|:--|
+| 1.01x | 98.0198% | ~1 in 1 |
+| 2x | 49.5% | ~1 in 2 |
+| 10x | 9.9% | ~1 in 10 |
+| 100x | 0.99% | ~1 in 101 |
+| 1,000x | 0.099% | ~1 in 1,010 |
+| 10,000x | 0.0099% | ~1 in 10,101 |
+| 1,000,000x | 0.000099% | ~1 in 1,010,101 |
+
+## RTP scaling
+
+Example at 10x target:
+
+| Edge | RTP | Win chance |
+|:--|:--|:--|
+| 1% | 99% | 9.9% |
+| 2% | 98% | 9.8% |
+| 3% | 97% | 9.7% |
+| 4% | 96% | 9.6% |
+| 8% | 92% | 9.2% |
+
+## Configuration
+
+| Attribute | Description |
+|:--|:--|
+| `customLimboBackgroundSvgUrl` | Custom background |
+
+For shared attributes (edge, limits, branding), see [game settings](/operate/game-settings).

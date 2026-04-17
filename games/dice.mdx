@@ -1,0 +1,74 @@
+---
+title: "Dice"
+description: "Predict whether the roll lands above or below your target. Dynamic multipliers up to 9,900x."
+---
+
+import { GamePreview } from "/snippets/game-preview.jsx"
+
+Set a target number, predict whether the roll lands above or below it, and collect a multiplier inversely proportional to your win chance. Payouts scale up to 9,900x.
+
+<GamePreview title="Dice" src="https://games.betorigami.com/?settings=eyJlbnZpcm9ubWVudCI6IkhVQjg4X0VVX1BST0QiLCJnYW1lIjoiRElDRSJ9" />
+
+## At a glance
+
+<Columns cols={3}>
+  <Card title="Type">Original, prediction</Card>
+  <Card title="RTP">92–99%</Card>
+  <Card title="Max multiplier">9,900x (at 0.01% win chance, 99% RTP)</Card>
+  <Card title="Range">0–10,000 (10,001 outcomes)</Card>
+  <Card title="Directions">Above, Below</Card>
+  <Card title="Min win chance">0.01%</Card>
+</Columns>
+
+## How to play
+
+<Steps>
+  <Step title="Set the target">
+    Any value between 0 and 10,000.
+  </Step>
+  <Step title="Pick the direction">
+    Above: win if the roll is higher. Below: win if it's lower.
+  </Step>
+  <Step title="Place your bet">
+    The multiplier is calculated from your win chance. Lower chance, higher multiplier.
+  </Step>
+</Steps>
+
+## Multiplier formula
+
+```text
+multiplier = (100 - edge) / win_chance
+```
+
+`win_chance` is a percentage between 0.01% and 99.99%. Multipliers are rounded to four decimals.
+
+### Example payouts at 99% RTP
+
+| Win chance | Multiplier | Target (Above) |
+|:--|:--|:--|
+| 50% | 1.98x | 5,000 |
+| 25% | 3.96x | 7,500 |
+| 10% | 9.90x | 9,000 |
+| 1% | 99.00x | 9,900 |
+| 0.1% | 990.00x | 9,990 |
+| 0.01% | 9,900.00x | 9,999 |
+
+## RTP scaling
+
+| Win chance | 99% | 98% | 97% | 96% | 92% |
+|:--|:--|:--|:--|:--|:--|
+| 50% | 1.98x | 1.96x | 1.94x | 1.92x | 1.84x |
+| 25% | 3.96x | 3.92x | 3.88x | 3.84x | 3.68x |
+| 10% | 9.90x | 9.80x | 9.70x | 9.60x | 9.20x |
+| 1% | 99.00x | 98.00x | 97.00x | 96.00x | 92.00x |
+
+## Configuration
+
+Dice-specific attributes:
+
+| Attribute | Description |
+|:--|:--|
+| `diceMinMultiplier` | Minimum multiplier allowed |
+| `customDiceBackgroundSvgUrl` | Custom background |
+
+For shared attributes (edge, limits, branding), see [game settings](/operate/game-settings).

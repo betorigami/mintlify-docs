@@ -1,87 +1,18 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
-  "name": "Mint Starter Kit",
+  "theme": "almond",
+  "name": "Origami",
+  "fonts": {
+    "family": "Inter"
+  },
   "colors": {
-    "primary": "#16A34A",
+    "primary": "#0D9373",
     "light": "#07C983",
-    "dark": "#15803D"
+    "dark": "#0D9373"
   },
   "favicon": "/favicon.svg",
-  "navigation": {
-    "tabs": [
-      {
-        "tab": "Guides",
-        "groups": [
-          {
-            "group": "Getting started",
-            "pages": [
-              "index",
-              "quickstart",
-              "development"
-            ]
-          },
-          {
-            "group": "Customization",
-            "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "Writing content",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API reference",
-        "groups": [
-          {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
-            ]
-          }
-        ]
-      }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
+  "icons": {
+    "library": "lucide"
   },
   "logo": {
     "light": "/logo/light.svg",
@@ -89,34 +20,96 @@
   },
   "navbar": {
     "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
-      }
+      { "label": "Home", "href": "https://betorigami.com" },
+      { "label": "Support", "href": "mailto:support@betorigami.com" }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Get Started",
+      "href": "https://forms.gle/Yqa9kyoxrCgp1FGs6"
     }
   },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Games",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": ["index", "games/catalog"]
+          },
+          {
+            "group": "Originals",
+            "pages": [
+              "games/plinko",
+              "games/keno",
+              "games/dice",
+              "games/advanced-dice",
+              "games/limbo",
+              "games/mines",
+              "games/diamonds",
+              "games/wheel"
+            ]
+          },
+          {
+            "group": "Table Games",
+            "pages": [
+              "games/roulette",
+              "games/baccarat",
+              "games/blackjack"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Operate",
+        "groups": [
+          {
+            "group": "Start",
+            "pages": [
+              "operate/getting-started",
+              "operate/integration-options"
+            ]
+          },
+          {
+            "group": "Configure",
+            "pages": [
+              "operate/edge-and-rtp",
+              "operate/game-settings",
+              "operate/currencies"
+            ]
+          },
+          {
+            "group": "Customize",
+            "pages": ["operate/branding"]
+          },
+          {
+            "group": "Trust",
+            "pages": ["operate/provably-fair"]
+          }
+        ]
+      },
+      {
+        "tab": "Product updates",
+        "groups": [
+          {
+            "group": "Changelog",
+            "pages": ["operate/changelog"]
+          }
+        ]
+      }
+    ]
+  },
   "contextual": {
-    "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
+    "options": ["copy", "view"]
+  },
+  "feedback": {
+    "suggestEdit": true
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/betorigami",
+      "linkedin": "https://linkedin.com/company/betorigami"
     }
   }
 }

@@ -1,0 +1,80 @@
+---
+title: "Game settings"
+description: "Every configurable attribute on the Origami embed element: core, limits, navigation, and game-specific options."
+---
+
+Every Origami game is configured through attributes on the `<origami-game-provider-wrapper>` embed element. Attributes use the same names as the underlying Lit properties (camelCase). HTML attribute names are case-insensitive, so `minBet`, `MinBet`, and `minbet` all work. We use camelCase everywhere for clarity.
+
+For visual customization (logos, backgrounds, themes, custom SVGs), see [branding](/operate/branding).
+
+## Core
+
+| Attribute | Type | Required | Description |
+|:--|:--|:--|:--|
+| `origamiGame` | string | Yes | Game to load. One of: `DICE`, `ADVANCED_DICE`, `KENO`, `LIMBO`, `MINES`, `DIAMONDS`, `WHEEL`, `PLINKO`, `ROULETTE`, `BACCARAT`, `BLACKJACK` |
+| `baseUrl` | string | Yes | Your Origami API base URL |
+| `authToken` | string | Yes | Player session token (passed as `Authorization: Bearer`) |
+| `currency` | string | Yes | [Currency code](/operate/currencies) |
+| `balance` | number | Yes | Player's current balance |
+| `currencyDecimals` | number | Yes | Decimal places to display for the currency |
+| `edge` | number | No | House edge percentage. Default: `2` |
+| `language` | string | No | Language code (e.g. `en`, `de`, `pt`, `es`, `tr`) |
+
+## Bet limits
+
+| Attribute | Type | Default | Description |
+|:--|:--|:--|:--|
+| `minBet` | number | `null` | Minimum bet allowed |
+| `maxBet` | number | `null` | Maximum bet allowed |
+| `maxPayout` | number | `null` | Maximum payout per round |
+| `alwaysEnableMaxBetButton` | boolean | `false` | Keep the Max bet button always active |
+
+Bets outside these limits return a `LIMIT_REACHED` error.
+
+## Navigation
+
+| Attribute | Type | Description |
+|:--|:--|:--|
+| `lobbyUrl` | string | URL the player lands on when they exit the game |
+| `depositUrl` | string | URL for the deposit button. Omit to hide the button |
+
+## Game-specific
+
+<Accordion title="Dice and Advanced Dice">
+  | Attribute | Type | Description |
+  |:--|:--|:--|
+  | `diceMinMultiplier` | number | Minimum multiplier allowed on Dice |
+  | `advancedDiceMinMultiplier` | number | Minimum multiplier on Advanced Dice |
+</Accordion>
+
+<Accordion title="Roulette">
+  | Attribute | Type | Default | Description |
+  |:--|:--|:--|:--|
+  | `roulettePreventOppositeBets` | boolean | `false` | Block contradictory bets (e.g. Red + Black) |
+  | `rouletteDefaultInstantBet` | boolean | `false` | Start the round in instant-bet mode |
+</Accordion>
+
+<Accordion title="Baccarat">
+  | Attribute | Type | Default | Description |
+  |:--|:--|:--|:--|
+  | `baccaratPreventOppositeBets` | boolean | `false` | Block contradictory bets |
+</Accordion>
+
+## Example
+
+```html
+<origami-game-provider-wrapper
+  origamiGame="PLINKO"
+  baseUrl="https://api.your-domain.com/origami"
+  authToken="player-session-token"
+  currency="USD"
+  balance="1000"
+  currencyDecimals="2"
+  edge="2"
+  minBet="0.10"
+  maxBet="100"
+  maxPayout="10000"
+  lobbyUrl="https://your-domain.com/games"
+  language="en"
+></origami-game-provider-wrapper>
+```

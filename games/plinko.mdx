@@ -1,0 +1,103 @@
+---
+title: "Plinko"
+description: "Ball drop game with three risk levels, 8–16 rows, and multipliers up to 1,000x."
+---
+
+import { GamePreview } from "/snippets/game-preview.jsx"
+
+A ball drops through a field of pins and lands in a multiplier bucket. More rows means more outcomes. Higher risk stretches the curve: bigger top multipliers, but more low-value buckets along the way.
+
+<GamePreview title="Plinko" src="https://games.betorigami.com/?settings=eyJlbnZpcm9ubWVudCI6IkhVQjg4X0VVX1BST0QiLCJnYW1lIjoiUExJTktPIn0=" />
+
+## At a glance
+
+<Columns cols={3}>
+  <Card title="Type">Original, ball drop</Card>
+  <Card title="RTP">92–99%</Card>
+  <Card title="Max multiplier">1,000x (high risk, 16 rows, 99% RTP)</Card>
+  <Card title="Rows">8–16</Card>
+  <Card title="Risk levels">Low, Medium, High</Card>
+  <Card title="Edge">1%, 2%, 3%, 4%, 8%</Card>
+</Columns>
+
+## How to play
+
+<Steps>
+  <Step title="Choose the row count">
+    More rows means more pin levels and more buckets. 8 rows gives 9 buckets; 16 rows gives 17.
+  </Step>
+  <Step title="Pick a risk level">
+    Low: frequent small wins with capped upside. Medium: balanced. High: rare top multipliers with lots of near-zero buckets.
+  </Step>
+  <Step title="Place your bet and drop">
+    The ball bounces through the pins and lands in a bucket. Payout = bet × bucket multiplier.
+  </Step>
+</Steps>
+
+## Paytable
+
+Multipliers shown at 99% RTP. Lower RTP scales them down proportionally. The payout field is symmetric: leftmost and rightmost buckets always match.
+
+<Tabs>
+  <Tab title="Low risk">
+    | Rows | Max multiplier |
+    |:--|:--|
+    | 8 | 6x |
+    | 9 | 6x |
+    | 10 | 9x |
+    | 11 | 8x |
+    | 12 | 10x |
+    | 13 | 8x |
+    | 14 | 7x |
+    | 15 | 15x |
+    | 16 | 16x |
+  </Tab>
+  <Tab title="Medium risk">
+    | Rows | Max multiplier |
+    |:--|:--|
+    | 8 | 13x |
+    | 9 | 18x |
+    | 10 | 22x |
+    | 11 | 24x |
+    | 12 | 33x |
+    | 13 | 43x |
+    | 14 | 58x |
+    | 15 | 88x |
+    | 16 | 110x |
+  </Tab>
+  <Tab title="High risk">
+    | Rows | Max multiplier |
+    |:--|:--|
+    | 8 | 29x |
+    | 9 | 43x |
+    | 10 | 76x |
+    | 11 | 120x |
+    | 12 | 170x |
+    | 13 | 260x |
+    | 14 | 420x |
+    | 15 | 620x |
+    | 16 | 1,000x |
+  </Tab>
+</Tabs>
+
+## RTP scaling
+
+| Edge | RTP | Effect on multipliers |
+|:--|:--|:--|
+| 1% | 99% | Full multipliers shown above |
+| 2% | 98% | ~1% lower |
+| 3% | 97% | ~2% lower |
+| 4% | 96% | ~3% lower |
+| 8% | 92% | ~7% lower |
+
+## Configuration
+
+Plinko-specific attributes:
+
+| Attribute | Description |
+|:--|:--|
+| `customPlinkoBackgroundSvgUrl` | Custom background artwork |
+| `customPlinkoEdgeColor` | Edge bucket color |
+| `customPlinkoCenterColor` | Center bucket color |
+
+For shared attributes (edge, limits, branding), see [game settings](/operate/game-settings).

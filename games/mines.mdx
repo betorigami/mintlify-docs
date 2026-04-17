@@ -1,0 +1,77 @@
+---
+title: "Mines"
+description: "Reveal gems on a 5×5 grid while avoiding mines. Cash out anytime."
+---
+
+import { GamePreview } from "/snippets/game-preview.jsx"
+
+A 5×5 grid hides gems and mines. Reveal tiles one at a time. Each gem raises your multiplier. Hit a mine and the round ends. Cash out at any point to lock in your winnings.
+
+<GamePreview title="Mines" src="https://games.betorigami.com/?settings=eyJlbnZpcm9ubWVudCI6IkhVQjg4X0VVX1BST0QiLCJnYW1lIjoiTUlORVMifQ==" />
+
+## At a glance
+
+<Columns cols={3}>
+  <Card title="Type">Original, grid reveal</Card>
+  <Card title="RTP">92–99%</Card>
+  <Card title="Grid">5×5 (25 tiles)</Card>
+  <Card title="Mines">1–24 (configurable)</Card>
+  <Card title="Default mines">3</Card>
+  <Card title="Max multiplier">Dynamic</Card>
+</Columns>
+
+## How to play
+
+<Steps>
+  <Step title="Set the number of mines">
+    Choose 1–24 mines. More mines means higher multipliers per reveal and higher bust risk.
+  </Step>
+  <Step title="Reveal tiles">
+    Click tiles one by one. Each safe tile compounds your multiplier.
+  </Step>
+  <Step title="Cash out or keep going">
+    Cash out anytime. Hit a mine and you lose your bet.
+  </Step>
+</Steps>
+
+## Multiplier formula
+
+```text
+multiplier = (100 - edge) / win_chance
+```
+
+Win chance at each step uses remaining safe tiles vs. total unrevealed tiles. The running multiplier compounds with each reveal.
+
+### Multiplier progression (99% RTP)
+
+| Gems | 1 mine | 3 mines | 5 mines | 10 mines | 24 mines |
+|:--|:--|:--|:--|:--|:--|
+| 1 | 1.03x | 1.13x | 1.24x | 1.65x | 24.75x |
+| 2 | 1.07x | 1.29x | 1.56x | 2.83x | — |
+| 3 | 1.11x | 1.48x | 1.99x | 5.09x | — |
+| 4 | 1.15x | 1.71x | 2.58x | 9.70x | — |
+| 5 | 1.19x | 2.00x | 3.43x | 19.80x | — |
+| 10 | 1.45x | 4.95x | 17.16x | — | — |
+| 15 | 1.82x | 17.82x | — | — | — |
+| 20 | 2.47x | — | — | — | — |
+| 24 | 24.75x | — | — | — | — |
+
+`—` means the combination is impossible (not enough safe tiles remain).
+
+<Note>
+Values are approximate. Exact multipliers derive from the combinatorial probability at each step.
+</Note>
+
+## Configuration
+
+Mines-specific artwork:
+
+| Attribute | Description |
+|:--|:--|
+| `customMinesBackgroundSvgUrl` | Background artwork |
+| `customMinesGemSvgUrl` | Gem (safe tile) icon |
+| `customMinesBombSvgUrl` | Mine icon |
+| `customMinesTileSvgUrl` | Unrevealed tile |
+| `customMinesAutobetSelectedTileSvgUrl` | Autobet-selected tile |
+
+For shared attributes (edge, limits, branding), see [game settings](/operate/game-settings).

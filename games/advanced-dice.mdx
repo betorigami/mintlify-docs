@@ -1,0 +1,54 @@
+---
+title: "Advanced Dice"
+description: "Multi-range dice prediction with three roll types. Same formula as Dice, more control."
+---
+
+import { GamePreview } from "/snippets/game-preview.jsx"
+
+An extended take on Dice with three prediction modes. Define one or two ranges and bet on whether the roll lands inside or outside them. Same math, more knobs.
+
+<GamePreview title="Advanced Dice" src="https://games.betorigami.com/?settings=eyJlbnZpcm9ubWVudCI6IkhVQjg4X0VVX1BST0QiLCJnYW1lIjoiQURWQU5DRURfRElDRSJ9" />
+
+## At a glance
+
+<Columns cols={3}>
+  <Card title="Type">Original, multi-range prediction</Card>
+  <Card title="RTP">92–99%</Card>
+  <Card title="Max multiplier">9,900x</Card>
+  <Card title="Range">0–100 (displayed), 0–10,000 (internal)</Card>
+  <Card title="Roll types">Between, Outside, Between Two</Card>
+  <Card title="Input precision">2 decimal places</Card>
+</Columns>
+
+## Roll types
+
+<Tabs>
+  <Tab title="Roll between">
+    Win if the roll lands inside a single range. Default 25.00–75.00 (50% win chance). A narrower range yields a higher multiplier.
+  </Tab>
+  <Tab title="Roll outside">
+    Win if the roll lands outside a single range. A wider exclusion zone yields a higher multiplier.
+  </Tab>
+  <Tab title="Roll between two">
+    Win if the roll lands inside either of two ranges. Default 25.00–50.00 and 62.50–87.50. Four sliders, two bounds per range.
+  </Tab>
+</Tabs>
+
+## Multiplier formula
+
+Same as [Dice](/games/dice):
+
+```text
+multiplier = (100 - edge) / win_chance
+```
+
+`win_chance` is the percentage of the 0–100 range covered by your win zone(s). Multipliers are rounded to four decimals.
+
+## Configuration
+
+| Attribute | Description |
+|:--|:--|
+| `advancedDiceMinMultiplier` | Minimum multiplier allowed |
+| `customAdvancedDiceBackgroundSvgUrl` | Custom background |
+
+For shared attributes (edge, limits, branding), see [game settings](/operate/game-settings).

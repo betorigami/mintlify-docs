@@ -1,0 +1,119 @@
+---
+title: "Branding"
+description: "Customize logos, backgrounds, themes, and per-game SVG artwork through embed attributes."
+---
+
+Every visual element of an Origami game can be customized through attributes on the embed element. Custom assets are SVG URLs that must be publicly accessible. The game fetches them at load time.
+
+## Logo and layout
+
+| Attribute | Type | Description |
+|:--|:--|:--|
+| `logoUrl` | string | Logo displayed in the game header |
+| `footerPosition` | string | Where the footer toolbar sits relative to the game (`ABOVE` or `BELOW`) |
+| `showCurrencyAsText` | boolean | Render currency code as text instead of the glyph |
+
+## Seasonal themes
+
+| Attribute | Values | Description |
+|:--|:--|:--|
+| `seasonTheme` | `DEFAULT`, `HORRORGAMI`, `JOLLYGAMI` | Default, Halloween, or holiday theming |
+
+## Currency icons
+
+| Attribute | Description |
+|:--|:--|
+| `gcCurrencyIconSvgUrl` | Custom icon for Game Coins (GC) |
+| `scCurrencyIconSvgUrl` | Custom icon for Service Coins (SC) |
+
+## Backgrounds
+
+Every game supports a custom background SVG:
+
+| Attribute | Game |
+|:--|:--|
+| `customDiceBackgroundSvgUrl` | Dice |
+| `customAdvancedDiceBackgroundSvgUrl` | Advanced Dice |
+| `customPlinkoBackgroundSvgUrl` | Plinko |
+| `customKenoBackgroundSvgUrl` | Keno |
+| `customMinesBackgroundSvgUrl` | Mines |
+| `customLimboBackgroundSvgUrl` | Limbo |
+| `customDiamondsBackgroundSvgUrl` | Diamonds |
+| `customWheelBackgroundSvgUrl` | Wheel |
+| `customRouletteBackgroundSvgUrl` | Roulette |
+| `customBaccaratBackgroundSvgUrl` | Baccarat |
+| `customBlackjackBackgroundSvgUrl` | Blackjack |
+
+## Game-specific artwork
+
+<Accordion title="Mines">
+  | Attribute | Description |
+  |:--|:--|
+  | `customMinesGemSvgUrl` | Gem (safe tile) icon |
+  | `customMinesBombSvgUrl` | Mine (bomb) icon |
+  | `customMinesTileSvgUrl` | Unrevealed tile |
+  | `customMinesAutobetSelectedTileSvgUrl` | Autobet-selected tile |
+</Accordion>
+
+<Accordion title="Keno">
+  | Attribute | Description |
+  |:--|:--|
+  | `customKenoTileSvgUrl` | Default tile |
+  | `customKenoSelectedTileSvgUrl` | Player-selected tile |
+  | `customKenoGemSvgUrl` | Matched (gem) tile |
+  | `customKenoNonMatchTileSvgUrl` | Drawn but unmatched tile |
+</Accordion>
+
+<Accordion title="Plinko">
+  | Attribute | Description |
+  |:--|:--|
+  | `customPlinkoEdgeColor` | Edge bucket color (hex or CSS color) |
+  | `customPlinkoCenterColor` | Center bucket color |
+</Accordion>
+
+<Accordion title="Wheel">
+  | Attribute | Description |
+  |:--|:--|
+  | `customWheelCenterSvgUrl` | Artwork at the center of the wheel |
+  | `customWheelCenterPadding` | Padding around the center image (number) |
+</Accordion>
+
+<Accordion title="Card games (Baccarat, Blackjack)">
+  | Attribute | Description |
+  |:--|:--|
+  | `customCardBackSvgUrl` | Card back, shared across all card games |
+  | `customBaccaratCardBackSvgUrl` | Baccarat-specific card back override |
+  | `customCardRedColor` | Override the red suit color |
+  | `customCardBlackColor` | Override the black suit color |
+</Accordion>
+
+<Accordion title="Footer icons">
+  | Attribute | Description |
+  |:--|:--|
+  | `customFooterLobbySvgUrl` | Lobby button |
+  | `customFooterVolumeSvgUrl` | Volume button |
+  | `customFooterGameInfoSvgUrl` | Game info button |
+  | `customFooterInstantBetSvgUrl` | Instant bet toggle |
+  | `customFooterHotkeysSvgUrl` | Hotkeys button |
+  | `customFooterProvablyFairSvgUrl` | Provably fair button |
+</Accordion>
+
+## Example
+
+```html
+<origami-game-provider-wrapper
+  origamiGame="PLINKO"
+  baseUrl="https://api.your-domain.com/origami"
+  authToken="player-session-token"
+  currency="USD"
+  balance="1000"
+  currencyDecimals="2"
+  edge="2"
+  logoUrl="https://cdn.your-domain.com/logo.svg"
+  customPlinkoBackgroundSvgUrl="https://cdn.your-domain.com/plinko-bg.svg"
+  customPlinkoEdgeColor="#FF5722"
+  customPlinkoCenterColor="#4CAF50"
+  footerPosition="BELOW"
+  seasonTheme="DEFAULT"
+></origami-game-provider-wrapper>
+```

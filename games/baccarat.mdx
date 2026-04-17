@@ -1,0 +1,84 @@
+---
+title: "Baccarat"
+description: "Player vs Banker with standard commission rules, Tie bet, and real third-card draw logic."
+---
+
+import { GamePreview } from "/snippets/game-preview.jsx"
+
+Bet on Player, Banker, or Tie. Two hands are dealt and scored. Closest to 9 wins. Banker bets pay 1.95x after a 5% commission. Tie pays 8x.
+
+<GamePreview title="Baccarat" src="https://games.betorigami.com/?settings=eyJlbnZpcm9ubWVudCI6IkhVQjg4X0VVX1BST0QiLCJnYW1lIjoiQkFDQ0FSQVQifQ==" />
+
+## At a glance
+
+<Columns cols={3}>
+  <Card title="Type">Table game, cards</Card>
+  <Card title="RTP">~98.94% (Banker), ~98.76% (Player), ~85.64% (Tie)</Card>
+  <Card title="House edge">~1.06% / ~1.24% / ~14.36%</Card>
+  <Card title="Max multiplier">8x (Tie)</Card>
+  <Card title="Max cards per hand">3</Card>
+  <Card title="Bets">Player, Banker, Tie</Card>
+</Columns>
+
+## How to play
+
+<Steps>
+  <Step title="Place your bet">
+    Any combination of Player, Banker, and Tie.
+  </Step>
+  <Step title="Deal">
+    Player and Banker each receive two cards. A third may be drawn based on standard rules.
+  </Step>
+  <Step title="Score">
+    Card values: Ace = 1, 2–9 = face value, 10/Face = 0. Only the last digit of the total counts (e.g. 15 scores 5). Closest to 9 wins.
+  </Step>
+</Steps>
+
+## Payouts
+
+{/* TODO: Verify Tie payout against game source. Tie listed as 8x total return implies a 7:1 profit ratio and a house edge near 23.9%, which conflicts with the ~14.36% edge in the At a glance card (consistent with a standard 8:1 payout / 9x total return). One of the two numbers needs correcting; do not change until confirmed. */}
+
+| Bet | Payout | Commission |
+|:--|:--|:--|
+| Player | 2x | — |
+| Banker | 1.95x | 5% |
+| Tie | 8x | — |
+
+If you bet Player or Banker and the result is a Tie, your bet is returned (push).
+
+<Accordion title="Third-card rules">
+  ### Player
+
+  | Player's first two cards | Action |
+  |:--|:--|
+  | 0–5 | Draw |
+  | 6–7 | Stand |
+  | 8–9 | Natural (both hands stand) |
+
+  ### Banker
+
+  The Banker's draw depends on the Player's third card:
+
+  | Banker total | Draws when Player's 3rd is | Stands when |
+  |:--|:--|:--|
+  | 0–2 | Always draws | — |
+  | 3 | 0–7, 9 | 8 |
+  | 4 | 2–7 | 0, 1, 8, 9 |
+  | 5 | 4–7 | 0–3, 8, 9 |
+  | 6 | 6–7 | 0–5, 8, 9 |
+  | 7 | — | Always stands |
+  | 8–9 | Natural | Natural |
+
+  If the Player stands on two cards, the Banker draws on 0–5 and stands on 6+.
+</Accordion>
+
+## Configuration
+
+| Attribute | Description |
+|:--|:--|
+| `baccaratPreventOppositeBets` | Block contradictory bets |
+| `customBaccaratBackgroundSvgUrl` | Custom background |
+| `customBaccaratCardBackSvgUrl` | Baccarat-specific card back |
+| `customCardBackSvgUrl` | Shared card back across all card games |
+
+For shared attributes (edge, limits, branding), see [game settings](/operate/game-settings).

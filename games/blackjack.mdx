@@ -1,0 +1,74 @@
+---
+title: "Blackjack"
+description: "Classic 21 with hit, stand, double down, split, and insurance. ~99.5% RTP with basic strategy."
+---
+
+import { GamePreview } from "/snippets/game-preview.jsx"
+
+Standard blackjack. Beat the dealer's hand without going over 21. Natural blackjack pays 2.5x. Dealer hits to 16, stands on 17.
+
+<GamePreview title="Blackjack" src="https://games.betorigami.com/?settings=eyJlbnZpcm9ubWVudCI6IkhVQjg4X0VVX1BST0QiLCJnYW1lIjoiQkxBQ0tKQUNLIn0=" />
+
+## At a glance
+
+<Columns cols={3}>
+  <Card title="Type">Table game, cards</Card>
+  <Card title="RTP">~99.5% (with basic strategy)</Card>
+  <Card title="House edge">~0.5%</Card>
+  <Card title="Max multiplier">2.5x (Natural Blackjack)</Card>
+  <Card title="Actions">Hit, Stand, Double Down, Split, Insurance</Card>
+  <Card title="Dealer rule">Hits to 16, stands on 17+</Card>
+</Columns>
+
+## How to play
+
+<Steps>
+  <Step title="Place your bet" />
+  <Step title="Receive your cards">
+    Two face-up cards. The dealer gets one face-up and one face-down.
+  </Step>
+  <Step title="Choose your action">
+    **Hit:** take another card. **Stand:** keep your total. **Double Down:** double your bet and take exactly one more card. **Split:** if your two cards match, play them as two separate hands. Going over 21 is a bust (instant loss).
+  </Step>
+  <Step title="Insurance (optional)">
+    If the dealer's face-up card is an Ace, take insurance: a side bet worth half your original bet that pays 2:1 if the dealer has blackjack.
+  </Step>
+  <Step title="Dealer plays">
+    Dealer reveals the hole card and draws to 17.
+  </Step>
+  <Step title="Compare">
+    Closest to 21 without busting wins. Ties push (bet returned).
+  </Step>
+</Steps>
+
+## Payouts
+
+| Outcome | Payout |
+|:--|:--|
+| Natural Blackjack (21 on first two cards) | 2.5x (3:2) |
+| Win | 2x (1:1) |
+| Insurance pays (dealer has blackjack) | 3x on the insurance bet (2:1) |
+| Push (tie) | 1x (bet returned) |
+| Loss or Bust | 0x |
+
+## Card values
+
+| Card | Value |
+|:--|:--|
+| 2–10 | Face value |
+| Jack, Queen, King | 10 |
+| Ace | 1 or 11 (whichever is better) |
+
+## House edge
+
+With basic strategy, the house edge is approximately 0.5% (99.5% RTP). Insurance carries a higher edge.
+
+## Configuration
+
+| Attribute | Description |
+|:--|:--|
+| `customBlackjackBackgroundSvgUrl` | Custom background |
+| `customCardBackSvgUrl` | Shared card back across all card games |
+| `customCardRedColor` / `customCardBlackColor` | Override suit colors |
+
+For shared attributes (edge, limits, branding), see [game settings](/operate/game-settings).

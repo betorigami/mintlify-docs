@@ -1,0 +1,66 @@
+---
+title: "Edge and RTP"
+description: "How house edge and return-to-player work across every game, and what each setting does to your margins."
+---
+
+House edge is the percentage the house keeps per bet on average. Return to player is the inverse: `RTP = 100% - edge`.
+
+## Originals
+
+All eight originals support the same five edge levels. The default is **2%**.
+
+| Game | 1% | 2% | 3% | 4% | 8% |
+|:--|:--|:--|:--|:--|:--|
+| Plinko | 99% | 98% | 97% | 96% | 92% |
+| Keno | 99% | 98% | 97% | 96% | 92% |
+| Dice | 99% | 98% | 97% | 96% | 92% |
+| Advanced Dice | 99% | 98% | 97% | 96% | 92% |
+| Limbo | 99% | 98% | 97% | 96% | 92% |
+| Mines | 99% | 98% | 97% | 96% | 92% |
+| Diamonds | 99% | 98% | 97% | 96% | 92% |
+| Wheel | 99% | 98% | 97% | 96% | 92% |
+
+## Table games
+
+Table games use standard casino odds. They are not configurable.
+
+| Game | Edge | RTP |
+|:--|:--|:--|
+| Roulette (European) | 2.7% | 97.3% |
+| Roulette (American) | 5.3% | 94.7% |
+| Baccarat (Banker) | ~1.06% | ~98.94% |
+| Baccarat (Player) | ~1.24% | ~98.76% |
+| Baccarat (Tie) | ~14.36% | ~85.64% |
+| Blackjack (basic strategy) | ~0.5% | ~99.5% |
+
+## How edge affects payouts
+
+For dynamic-multiplier games (Dice, Advanced Dice, Limbo, Mines), the formula is direct:
+
+```text
+multiplier = (100 - edge) / win_chance
+```
+
+For fixed-paytable games (Plinko, Keno, Wheel, Diamonds), each edge level has a pre-calculated paytable where multipliers are scaled down proportionally.
+
+### Example: Plinko, high risk, 16 rows
+
+| Edge | RTP | Max multiplier |
+|:--|:--|:--|
+| 1% | 99% | 1,000x |
+| 2% | 98% | ~980x |
+| 3% | 97% | ~970x |
+| 4% | 96% | ~960x |
+| 8% | 92% | ~920x |
+
+## How to choose
+
+| Edge | Best for |
+|:--|:--|
+| 1–2% | Competitive RTP in markets with many instant-game providers. Trades revenue per bet for volume and retention. |
+| 3–4% | A balanced starting point for new markets and mid-volume platforms. |
+| 8% | Maximum revenue per bet. Best where session length is short. |
+
+<Tip>
+A 2–3% edge is a typical starting point.
+</Tip>

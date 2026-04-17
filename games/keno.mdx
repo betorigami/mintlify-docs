@@ -1,0 +1,118 @@
+---
+title: "Keno"
+description: "Pick up to 10 numbers from a 40-tile board across four risk levels. Multipliers up to 1,000x."
+---
+
+import { GamePreview } from "/snippets/game-preview.jsx"
+
+Pick 1 to 10 numbers on a 40-tile board. Ten tiles are drawn at random. The more matches, the higher the payout. The risk level controls the curve. High pays nothing on partial matches but up to 1,000x on a clean hit.
+
+<GamePreview title="Keno" src="https://games.betorigami.com/?settings=eyJlbnZpcm9ubWVudCI6IkhVQjg4X0VVX1BST0QiLCJnYW1lIjoiS0VOTyJ9" />
+
+## At a glance
+
+<Columns cols={3}>
+  <Card title="Type">Original, lottery</Card>
+  <Card title="RTP">92–99%</Card>
+  <Card title="Max multiplier">1,000x</Card>
+  <Card title="Board">40 tiles, 10 drawn per round</Card>
+  <Card title="Picks">1–10</Card>
+  <Card title="Risk levels">Classic, Low, Medium, High</Card>
+</Columns>
+
+## How to play
+
+<Steps>
+  <Step title="Pick your numbers">
+    Select 1 to 10 tiles. More picks unlock higher potential multipliers but require more matches.
+  </Step>
+  <Step title="Choose a risk level">
+    Classic: balanced. Low: frequent small returns. Medium: moderate. High: all-or-nothing.
+  </Step>
+  <Step title="Play">
+    Ten tiles are drawn. Matches against your picks determine your payout.
+  </Step>
+</Steps>
+
+## Paytable
+
+Values are payout multipliers for each match count. `0` means no payout. `—` means that match count is impossible for that pick count.
+
+<Tabs>
+  <Tab title="Classic">
+    | Matches | 1 pick | 2 picks | 3 picks | 4 picks | 5 picks | 6 picks | 7 picks | 8 picks | 9 picks | 10 picks |
+    |:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|
+    | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+    | 1 | 3.96 | 1.9 | 1 | 0.8 | 0.25 | 0 | 0 | 0 | 0 | 0 |
+    | 2 | — | 4.5 | 3.1 | 1.8 | 1.4 | 1 | 0.47 | 0 | 0 | 0 |
+    | 3 | — | — | 10.4 | 5 | 4.1 | 3.68 | 3 | 2.2 | 1.55 | 1.4 |
+    | 4 | — | — | — | 22.5 | 16.5 | 7 | 4.5 | 4 | 3 | 2.25 |
+    | 5 | — | — | — | — | 36 | 16.5 | 14 | 13 | 8 | 4.5 |
+    | 6 | — | — | — | — | — | 40 | 31 | 22 | 15 | 8 |
+    | 7 | — | — | — | — | — | — | 60 | 55 | 44 | 17 |
+    | 8 | — | — | — | — | — | — | — | 70 | 60 | 50 |
+    | 9 | — | — | — | — | — | — | — | — | 85 | 80 |
+    | 10 | — | — | — | — | — | — | — | — | — | 100 |
+  </Tab>
+  <Tab title="Low risk">
+    | Matches | 1 pick | 2 picks | 3 picks | 4 picks | 5 picks | 6 picks | 7 picks | 8 picks | 9 picks | 10 picks |
+    |:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|
+    | 0 | 0.7 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+    | 1 | 1.85 | 2 | 1.1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+    | 2 | — | 3.8 | 1.38 | 2.2 | 1.5 | 1.1 | 1.1 | 1.1 | 1.1 | 1.1 |
+    | 3 | — | — | 26 | 7.9 | 4.2 | 2 | 1.6 | 1.5 | 1.3 | 1.2 |
+    | 4 | — | — | — | 90 | 13 | 6.2 | 3.5 | 2 | 1.7 | 1.3 |
+    | 5 | — | — | — | — | 300 | 100 | 15 | 5.5 | 2.5 | 1.8 |
+    | 6 | — | — | — | — | — | 700 | 225 | 39 | 7.5 | 3.5 |
+    | 7 | — | — | — | — | — | — | 700 | 100 | 50 | 13 |
+    | 8 | — | — | — | — | — | — | — | 800 | 250 | 50 |
+    | 9 | — | — | — | — | — | — | — | — | 1,000 | 250 |
+    | 10 | — | — | — | — | — | — | — | — | — | 1,000 |
+  </Tab>
+  <Tab title="Medium risk">
+    | Matches | 1 pick | 2 picks | 3 picks | 4 picks | 5 picks | 6 picks | 7 picks | 8 picks | 9 picks | 10 picks |
+    |:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|
+    | 0 | 0.4 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+    | 1 | 2.75 | 1.8 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+    | 2 | — | 5.1 | 2.8 | 1.7 | 1.4 | 0 | 0 | 0 | 0 | 0 |
+    | 3 | — | — | 50 | 10 | 4 | 3 | 2 | 2 | 2 | 1.6 |
+    | 4 | — | — | — | 100 | 14 | 9 | 7 | 4 | 2.5 | 2 |
+    | 5 | — | — | — | — | 390 | 180 | 30 | 11 | 5 | 4 |
+    | 6 | — | — | — | — | — | 710 | 400 | 67 | 15 | 7 |
+    | 7 | — | — | — | — | — | — | 800 | 400 | 100 | 26 |
+    | 8 | — | — | — | — | — | — | — | 900 | 500 | 100 |
+    | 9 | — | — | — | — | — | — | — | — | 1,000 | 500 |
+    | 10 | — | — | — | — | — | — | — | — | — | 1,000 |
+  </Tab>
+  <Tab title="High risk">
+    | Matches | 1 pick | 2 picks | 3 picks | 4 picks | 5 picks | 6 picks | 7 picks | 8 picks | 9 picks | 10 picks |
+    |:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|
+    | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+    | 1 | 3.96 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+    | 2 | — | 17.1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+    | 3 | — | — | 81.5 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+    | 4 | — | — | — | 259 | 0 | 0 | 0 | 0 | 0 | 0 |
+    | 5 | — | — | — | — | 450 | 0 | 0 | 0 | 0 | 0 |
+    | 6 | — | — | — | — | — | 710 | 0 | 0 | 0 | 0 |
+    | 7 | — | — | — | — | — | — | 800 | 0 | 0 | 0 |
+    | 8 | — | — | — | — | — | — | — | 900 | 0 | 0 |
+    | 9 | — | — | — | — | — | — | — | — | 1,000 | 0 |
+    | 10 | — | — | — | — | — | — | — | — | — | 1,000 |
+
+    High risk pays nothing on partial matches. You hit the exact pick count or you lose.
+  </Tab>
+</Tabs>
+
+## Configuration
+
+Keno-specific artwork:
+
+| Attribute | Description |
+|:--|:--|
+| `customKenoBackgroundSvgUrl` | Background artwork |
+| `customKenoTileSvgUrl` | Default tile |
+| `customKenoSelectedTileSvgUrl` | Player-selected tile |
+| `customKenoGemSvgUrl` | Matched (gem) tile |
+| `customKenoNonMatchTileSvgUrl` | Drawn but unmatched tile |
+
+For shared attributes (edge, limits, branding), see [game settings](/operate/game-settings).

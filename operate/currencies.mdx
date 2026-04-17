@@ -1,0 +1,64 @@
+---
+title: "Currencies"
+description: "23 supported currencies across fiat and social casino, with formatting rules for the game UI."
+---
+
+Origami supports 23 currencies out of the box, including two virtual currencies for social casino and sweepstakes platforms. The default if an unrecognized code is provided is **USD**.
+
+## Fiat
+
+| Code | Currency | Symbol | Decimals |
+|:--|:--|:--|:--|
+| USD | US Dollar | $ | 2 |
+| EUR | Euro | € | 2 |
+| GBP | British Pound | £ | 2 |
+| AUD | Australian Dollar | $ | 2 |
+| CAD | Canadian Dollar | $ | 2 |
+| NZD | New Zealand Dollar | $ | 2 |
+| JPY | Japanese Yen | ¥ | 0 |
+| CNY | Chinese Yuan | ¥ | 2 |
+| INR | Indian Rupee | ₹ | 2 |
+| PHP | Philippine Peso | ₱ | 2 |
+| ARS | Argentine Peso | $ | 2 |
+| BRL | Brazilian Real | R$ | 2 |
+| MXN | Mexican Peso | $ | 2 |
+| CLP | Chilean Peso | $ | 0 |
+| HNL | Honduran Lempira | L | 2 |
+| GTQ | Guatemalan Quetzal | Q | 2 |
+| DOP | Dominican Peso | RD$ | 2 |
+| TRY | Turkish Lira | ₺ | 2 |
+| RUB | Russian Ruble | ₽ | 2 |
+| NOK | Norwegian Krone | kr | 2 |
+| NGN | Nigerian Naira | ₦ | 2 |
+
+## Social casino
+
+| Code | Name | Symbol | Decimals |
+|:--|:--|:--|:--|
+| GC | Game Coins | GC | 2 |
+| SC | Service Coins | SC | 2 |
+
+GC and SC behave identically to fiat currencies but render with right-aligned text symbols instead of currency glyphs. You can supply custom SVG icons via the `gcCurrencyIconSvgUrl` and `scCurrencyIconSvgUrl` attributes. See [branding](/operate/branding).
+
+## Formatting
+
+- Currencies with 0 decimal places (JPY, CLP) display as whole numbers.
+- All other currencies display with 2 decimal places.
+- Set `showCurrencyAsText="true"` to render the currency code (e.g. `USD 1,000`) instead of the symbol. Useful for ambiguous-glyph currencies like the dollar.
+
+## Configuration
+
+Pass the code and decimals to the embed:
+
+```html
+<origami-game-provider-wrapper
+  currency="BRL"
+  currencyDecimals="2"
+  balance="5000"
+  ...
+></origami-game-provider-wrapper>
+```
+
+## Languages
+
+Games ship localized in 17 locales: Arabic, Chinese, English, English (social casino), Finnish, French, German, Hindi, Indonesian, Japanese, Korean, Polish, Portuguese, Russian, Spanish, Turkish, and Vietnamese. Set the locale via the `language` attribute on the embed.

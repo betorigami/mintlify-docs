@@ -1,0 +1,43 @@
+---
+title: "Diamonds"
+description: "Match five rolling diamonds for poker-style hand payouts up to 50x."
+---
+
+import { GamePreview } from "/snippets/game-preview.jsx"
+
+Five diamonds roll like slot reels. The combination is scored as a poker hand: pair, three of a kind, full house, and so on. Five of a kind pays 50x at every RTP level.
+
+<GamePreview title="Diamonds" src="https://games.betorigami.com/?settings=eyJlbnZpcm9ubWVudCI6IkhVQjg4X0VVX1BST0QiLCJnYW1lIjoiRElBTU9ORFMifQ==" />
+
+## At a glance
+
+<Columns cols={3}>
+  <Card title="Type">Original, slot-style</Card>
+  <Card title="RTP">92–99%</Card>
+  <Card title="Max multiplier">50x (Five of a Kind)</Card>
+  <Card title="Hands">6 tiers, Pair through Five of a Kind</Card>
+  <Card title="No match">0x</Card>
+  <Card title="Edge">1%, 2%, 3%, 4%, 8%</Card>
+</Columns>
+
+## Paytable
+
+| Hand | 99% | 98% | 97% | 96% | 92% |
+|:--|:--|:--|:--|:--|:--|
+| Five of a Kind | 50.0x | 50.0x | 50.0x | 50.0x | 50.0x |
+| Four of a Kind | 5.0x | 4.8x | 4.6x | 4.4x | 3.6x |
+| Full House | 4.3x | 4.0x | 3.7x | 3.4x | 3.2x |
+| Three of a Kind | 3.0x | 3.0x | 3.0x | 3.0x | 2.8x |
+| Two Pair | 2.0x | 2.0x | 2.0x | 2.0x | 2.0x |
+| Pair | 0.1x | 0.1x | 0.1x | 0.1x | 0.1x |
+| No Match | 0x | 0x | 0x | 0x | 0x |
+
+Five of a Kind and Two Pair pay the same across all RTP levels. Edge is absorbed through Four of a Kind, Full House, and Three of a Kind.
+
+## Configuration
+
+| Attribute | Description |
+|:--|:--|
+| `customDiamondsBackgroundSvgUrl` | Custom background |
+
+For shared attributes (edge, limits, branding), see [game settings](/operate/game-settings).
